@@ -1,7 +1,10 @@
 <div class="jumbotron">
   <h1><%= @book.title %></h1>
+  <hr>
   <p class="lead">Publisher: <%= @book.publisher %></p>
   <p class="lead">Author: <%= @book.author %></p>
   <p class="lead">Date Published: <%= d @book.date_published %></p>
   <p class="lead">Price: <%= number_to_currency @book.price, :precision => 2 %></p>
+  <p class="lead">Category: <%= @book.category.humanize%></p>
+  <p class="lead">ISBN: <%= @book.isbn%></p>
 </div>

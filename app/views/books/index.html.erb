@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <% @books.each do |book| %>
-      <tr>
+      <tr data-link="<%= book_path(book) %>">
         <td><%= book.isbn %></td>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
@@ -30,3 +30,5 @@
     <% end %>
   </tbody>
 </table>
+
+
