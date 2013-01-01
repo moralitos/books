@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap-sass'
+
 gem 'rails', '3.2.9'
+
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

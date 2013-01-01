@@ -11,6 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20121231225601) do
+
+  create_table "books", :force => true do |t|
+    t.string   "isbn"
+    t.string   "title"
+    t.string   "author"
+    t.string   "publisher"
+    t.date     "date_published"
+    t.decimal  "unit_cost",      :precision => 6, :scale => 2
+    t.string   "category"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+  end
 
 end
