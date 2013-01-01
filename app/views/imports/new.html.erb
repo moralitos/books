@@ -1,4 +1,9 @@
-<h2>Import books ...</h2> 
+<h2>Import books from a CSV file ...</h2> 
+<div class="alert alert-info">
+  <strong>Please ensure your import file has the following columns:</strong><br>
+  <li>isbn, title, author, publisher, date_published, unit_cost, category</li>
+</div>
+
 <%= simple_form_for :import, :url => '/imports', :multipart => true do |f| %>
   <p>
     <%= f.label :select_a_csv_file %>

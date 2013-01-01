@@ -1,5 +1,13 @@
 Books::Application.routes.draw do
 
+  resources :exports, :only => [:new, :create]
+
+  resources :imports, :only => [:new, :create] do
+    collection do
+      get 'export'
+    end
+  end
+
   resources :books, :only => [:index, :show] do
     collection do
       get 'find'
@@ -10,12 +18,6 @@ Books::Application.routes.draw do
     end
   end
 
-  resources :imports, :only => [:new, :create] do
-    collection do
-      get 'export'
-    end
-  end
-
-  root :to => 'books#index'
+  root :to => 'home#readme'
 
 end

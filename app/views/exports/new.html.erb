@@ -1,0 +1,18 @@
+<h2>Export a Template or a Sample CSV file ...</h2> 
+
+<br>
+
+<h4>
+  <%= link_to 'Export Template', exports_path(:export_type => 'template'), :method => :post %>
+</h4>
+<p>Export the template CSV file with a few entries to give you an idea of the format.</p>
+
+<br>
+
+<h4>
+  <%= link_to 'Export Books from ISBN database', exports_path(:export_type => 'full'), :method => :post %>
+</h4>
+
+<p>If you have an empty datafile, you can export some books from an isbn database.</p>
+<p>You can do this several times. Each time, a random selection is picked.</p>
+
