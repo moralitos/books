@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
+  self.per_page = 10
+
   attr_accessible :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
 
   validates_presence_of :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
