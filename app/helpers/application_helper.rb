@@ -10,4 +10,12 @@ module ApplicationHelper
     HTML
     html.html_safe
   end
+
+  def d(date)
+    begin
+      date.strftime("%m %d, %y")
+    rescue Exception => e
+      ''
+    end
+  end
 end

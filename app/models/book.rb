@@ -1,7 +1,8 @@
 class Book < ActiveRecord::Base
   attr_accessible :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
 
-  validates_presence_of :isbn
+  validates_presence_of :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
+
   validates_uniqueness_of :isbn
 
   validates :category, :inclusion => {:in => %w(book audiobook magazine), :message => "%{value} is not a valid category."}
