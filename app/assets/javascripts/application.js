@@ -17,11 +17,5 @@
 //= require autocomplete-rails
 //= require_tree .
 
-// click on a row and send to the link
-$(document).ready(function() {
-  $("tr[data-link]").click(function() {
-    window.location = this.dataset.link;
-  })
-});
 
 

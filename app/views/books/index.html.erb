@@ -17,7 +17,7 @@
   </thead>
   <tbody>
     <% @books.each do |book| %>
-      <tr data-link="<%= book_path(book) %>">
+      <tr data-link="<%= book_path(book) %>" data-record_id="<%= book.id %>">
         <td><%= book.isbn %></td>
         <td><%= book.title %></td>
         <td><%= book.author %></td>
