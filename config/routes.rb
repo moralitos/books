@@ -3,6 +3,10 @@ Books::Application.routes.draw do
   resources :books, :only => [:index, :show] do
     collection do
       get 'find'
+      get 'autocomplete_book_title'
+      get 'autocomplete_book_author'
+      get 'autocomplete_book_publisher'
+      get 'autocomplete_book_category'
     end
   end
 

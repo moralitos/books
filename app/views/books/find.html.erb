@@ -1,7 +1,9 @@
 <h2>Search books ...</h2> 
 <%= simple_form_for @search do |f| %>
-  <%= f.label :title_contains %>
-  <%= f.text_field :title_contains %><br />
+  <%= f.input :title_contains, :class => 'typeahead', :url => autocomplete_book_title_books_path, :as => :autocomplete %><br />
+  <%= f.input :author_contains, :url => autocomplete_book_author_books_path, :as => :autocomplete %><br />
+  <%= f.input :publisher_contains, :url => autocomplete_book_publisher_books_path, :as => :autocomplete %><br />
+  <%= f.input :category_contains, :url => autocomplete_book_category_books_path, :as => :autocomplete %><br />
   <%= f.button :submit, 'Search' %>
 <% end %>
 
