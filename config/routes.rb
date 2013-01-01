@@ -18,6 +18,8 @@ Books::Application.routes.draw do
     end
   end
 
-  root :to => 'home#readme'
+  match '/home/readme', :to => "home#readme"
+
+  root :to => 'books#index'
 
 end
