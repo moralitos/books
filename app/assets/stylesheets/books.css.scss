@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-tr:hover {
- cursor:pointer; 
+table.custom_hover tbody tr:hover {
+ cursor:pointer;
+ background-color: #d6e9c6;
+}
+
+.custom_with_background {
+  background-color: #d6e9c6;
+}
+
+.custom_without_background {
+  background-color: white;
 }
