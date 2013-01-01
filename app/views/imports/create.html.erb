@@ -1,0 +1,37 @@
+<% unless @import.errors.blank? %>
+  <div class="alert alert-error">
+    <strong>Errors encountered during import!</strong>
+    <%@import.errors.each do |error| %>
+      <li><%= error %></li>
+    <% end %>
+  </div>
+<% end %>
+
+<div class="alert">
+  <strong><%= @import.entries.size %> entries were processed during import. Details follow: </strong>
+
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Import Status</th>
+        <th>Errors</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <% @import.entries.each do |entry| %>
+        <tr>
+          <td><%= entry.isbn %></td>
+          <td><%= entry.title %></td>
+          <td><%= entry.errors.blank? ? 'Success' : 'Failure' %></td>
+          <td><%= entry.errors.full_messages.join(', ') %></td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>
+
+<%= link_to 'Go back to books listing', books_path, :class => "btn" %>

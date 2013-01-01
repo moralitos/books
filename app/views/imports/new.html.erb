@@ -1,0 +1,9 @@
+<h2>Import books ...</h2> 
+<%= simple_form_for :import, :url => '/imports', :multipart => true do |f| %>
+  <p>
+    <%= f.label :select_a_csv_file %>
+    <%= f.file_field :filename %>
+  </p>
+  <br>
+  <%= f.button :submit, 'Import Books' %>
+<% end %>

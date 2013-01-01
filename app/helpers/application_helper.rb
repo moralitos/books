@@ -13,9 +13,10 @@ module ApplicationHelper
 
   def d(date)
     begin
-      date.strftime("%m %d, %y")
+      date.strftime("%b %d, %Y")
     rescue Exception => e
       ''
     end
   end
+
 end

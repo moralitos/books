@@ -1,5 +1,5 @@
 class Import
-  attr_reader :errors
+  attr_reader :errors, :entries
 
   def initialize(file_path)
     @file_path = file_path
@@ -35,21 +35,21 @@ class Import
   end
 
   def import_books!
-    csv.each do |row|
-      book = Book.find_or_create_by_isbn(row['isbn'])
-      book.attributes = {title:row['title'], author:row['author'], publisher:row['publisher'], date_published:row['date_published'],
-        unit_cost:row['unit_cost'], category:row['category']}
+    csv.each do |entry|
+      book = Book.find_or_create_by_isbn(entry['isbn'])
+      book.attributes = {title:entry['title'], author:entry['author'], publisher:entry['publisher'], date_published:entry['date_published'],
+        unit_cost:entry['unit_cost'], category:entry['category']}
       book.save
       @entries << book
     end
   end
 
   def entries_imported
-    @rows_imported ||= @rows.select {|row| row.errors.blank?}
+    @entries_imported ||= @entries.select {|entry| entry.errors.blank?}
   end
 
   def entries_with_errors
-    @rows - rows_imported
+    @entries - entries_imported
   end
   
 end
