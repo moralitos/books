@@ -10,7 +10,9 @@ class Export
       "http://isbndb.com/d/subject/authors_american_fiction/books.html",
       "http://isbndb.com/d/subject/authors_american_20th_century_fiction/books.html",
       "http://isbndb.com/d/subject/composition_music/books.html",
-      "http://isbndb.com/d/subject/music_instruction_and_study/books.html"
+      "http://isbndb.com/d/subject/music_instruction_and_study/books.html",
+      "http://isbndb.com/d/subject/music_instruction_and_study/books.html?start_item=381",
+      "http://isbndb.com/d/subject/music_instruction_and_study/books.html?start_item=201",
     ] 
   end
 
