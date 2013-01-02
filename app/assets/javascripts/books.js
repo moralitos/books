@@ -52,7 +52,22 @@ $(document).ready(function() {
     if(e.keyCode == 38 && current_row > 0) {
       current_row -= 1;
       $.adjust_bg_colors(current_row);
-    };
+    }
+    //up key, beyond limit correction 
+    if(e.keyCode == 38 && current_row < 0) {
+      current_row = 0;
+      $.adjust_bg_colors(current_row);
+    }
+    //left key, goBack
+    if(e.keyCode == 37) {
+      parent.history.back();
+      return false; 
+    }
+    //right key, goForward
+    if(e.keyCode == 39) {
+      parent.history.forward();
+      return false; 
+    }
 
     //return key pressed
     //send to the link if the return key is pressed
