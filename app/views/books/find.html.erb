@@ -3,7 +3,7 @@
   <%= f.input :title_contains, :class => 'typeahead', :url => autocomplete_book_title_books_path, :as => :autocomplete %><br />
   <%= f.input :author_contains, :url => autocomplete_book_author_books_path, :as => :autocomplete %><br />
   <%= f.input :publisher_contains, :url => autocomplete_book_publisher_books_path, :as => :autocomplete %><br />
-  <%= f.input :category_contains, :url => autocomplete_book_category_books_path, :as => :autocomplete %><br />
+  <%= f.input :category_equals, :collection => Book.categories, :include_blank => true %> <br />
   <%= f.button :submit, 'Search' %>
 <% end %>
 

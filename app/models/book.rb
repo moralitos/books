@@ -1,13 +1,17 @@
 class Book < ActiveRecord::Base
   self.per_page = 10
 
+  def self.categories
+    %w(book audiobook magazine)
+  end
+
   attr_accessible :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
 
   validates_presence_of :author, :category, :date_published, :isbn, :publisher, :title, :unit_cost
 
   validates_uniqueness_of :isbn
 
-  validates :category, :inclusion => {:in => %w(book audiobook magazine), :message => "%{value} is not a valid category."}
+  validates :category, :inclusion => {:in => Book.categories, :message => "%{value} is not a valid category."}
 
   # Category has a percentage of markup for calculating price
   # that will not be in the import file

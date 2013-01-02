@@ -27,9 +27,8 @@ class ExportTest < ActiveSupport::TestCase
     assert_equal('0860074382', @export.isbn_books.first.isbn)
   end
 
-  test "An export should be able to parse all entries" do
+  test "An export should be able to parse all entries from the web stream" do
     @export.isbn_books.each do |isbn_book|
-      puts isbn_book
       assert(isbn_book.title)
       assert(isbn_book.publisher)
       assert(isbn_book.author)
