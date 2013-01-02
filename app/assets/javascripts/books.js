@@ -25,6 +25,18 @@ $(document).ready(function() {
     });
   }
 
+  //function to monitor the hover
+  //adjust the coloring and current row
+  $("tr[data-record_id]").hover(function() {
+    var hovered_record_id = this.dataset.record_id;
+    $.each(record_ids, function(index, value) {
+      if(hovered_record_id == value){
+        current_row = index;
+        $.adjust_bg_colors(current_row);
+      }
+    }); 
+  });
+
   //init the current_row
   var current_row = -1;
 
