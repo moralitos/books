@@ -11,7 +11,7 @@ gem 'will_paginate', '~> 3.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+
 
 gem 'meta_search'
 
@@ -27,9 +27,19 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :production do
+  gem 'mysql2'
+end
+
 group :development do
   gem 'debugger'
+  gem 'sqlite3'
 end
+
+group :test do
+  gem 'sqlite3'
+end
+
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
@@ -38,6 +48,8 @@ gem 'rails3-jquery-autocomplete'
 gem 'redcarpet'
 
 gem 'nokogiri'
+
+gem 'capistrano'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
